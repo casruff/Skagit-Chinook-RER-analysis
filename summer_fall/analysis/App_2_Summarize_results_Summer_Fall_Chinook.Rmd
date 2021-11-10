@@ -213,7 +213,7 @@ sDat <- apply(model[,grep("Sp",colnames(model))],2,quantile,CI_vec)
 sDat <- sDat[,1:(n_yrs-age_min)]
 ## posterior of recruits
 rDat <- exp(apply(model[,grep("tot_ln_Rec",colnames(model))],2,quantile,CI_vec))
-
+write.csv(t((rDat)),file.path(savedir,"sf_adults_recruits.csv"))
 
 aa <- model[,grep("mu_Rkr_a",colnames(model))]
 bb <- model[,grep("beta",colnames(model))]

@@ -119,7 +119,7 @@ reference points}
 }
 \vspace{0.2in}
 
-This is version 0.21.10.06.
+This is version 0.21.11.01.
 
 \hypertarget{background}{%
 \section{Background}\label{background}}
@@ -336,7 +336,7 @@ all values greater or equal to that.Vertical arrows under the x-axes in
 \NormalTok{sDat <-}\StringTok{ }\NormalTok{sDat[,}\DecValTok{1}\OperatorTok{:}\NormalTok{(n_yrs}\OperatorTok{-}\NormalTok{age_min)]}
 \CommentTok{## posterior of recruits}
 \NormalTok{rDat <-}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\KeywordTok{apply}\NormalTok{(model[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"tot_ln_Rec"}\NormalTok{,}\KeywordTok{colnames}\NormalTok{(model))],}\DecValTok{2}\NormalTok{,quantile,CI_vec))}
-
+\KeywordTok{write.csv}\NormalTok{(}\KeywordTok{t}\NormalTok{((rDat)),}\KeywordTok{file.path}\NormalTok{(savedir,}\StringTok{"sf_adults_recruits.csv"}\NormalTok{))}
 
 \NormalTok{aa <-}\StringTok{ }\NormalTok{model[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"mu_Rkr_a"}\NormalTok{,}\KeywordTok{colnames}\NormalTok{(model))]}
 \NormalTok{bb <-}\StringTok{ }\NormalTok{model[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"beta"}\NormalTok{,}\KeywordTok{colnames}\NormalTok{(model))]}
